@@ -7,13 +7,14 @@ class base
     public:
     int height;
 
+public:
     int getheight(int h)
     {
         return this->height;
     }
 };
 
-class derive: public base
+class derive: protected base
 {
     int weight;
 
@@ -27,6 +28,6 @@ class derive: public base
 int main()
 {
     derive d1;
-    d1.height = 24;
-    cout << d1.height << endl;
+    int val = d1.get_height(24);
+    cout << val << endl;
 }
